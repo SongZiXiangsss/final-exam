@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +29,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.profile-info {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.profile-info p {
+  margin: 10px 0;
+}
+
+.welcome-message {
+  font-style: italic;
+  margin-top: 30px;
+  color: #61dafb;
+}
+
+h1 {
+  margin-bottom: 20px;
 }
