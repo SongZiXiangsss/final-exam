@@ -5,9 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function BrowserRouter(props) {
+    return null;
+}
+
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter basename="/final-exam"> <App /> </BrowserRouter>,
   </React.StrictMode>
 );
 
