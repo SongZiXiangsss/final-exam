@@ -1,0 +1,51 @@
+name: React Build and Deploy
+
+on:
+  push:
+    branches: [ "main" ]  # 只在main分支推送时触发
+
+env:
+  SERVER_IP: 121.43.236.194
+  DEPLOY_DIR: /var/www/html
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # GitHub仓库中设置的secret
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4  # 检出代码
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # 使用你项目所需的Node版本
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build  # 构建React项目
+
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Create deploy directory if not exists
+      run: |
+        ssh -o StrictHostKeyChecking=no root@$SERVER_IP "mkdir -p $DEPLOY_DIR"
+
+    - name: Deploy files via SCP
+      run: |
+        scp -o StrictHostKeyChecking=no -r ./build/* root@$SERVER_IP:$DEPLOY_DIR/
+
+    - name: Clean up old files
+      run: |
+        ssh -o StrictHostKeyChecking=no root@$SERVER_IP "find $DEPLOY_DIR -mindepth 1 -delete"
+
+    - name: Move new files into place
+      run: |
+        scp -o StrictHostKeyChecking=no -r ./build/* root@$SERVER_IP:$DEPLOY_DIR/
+        ssh -o StrictHostKeyChecking=no root@$SERVER_IP "chown -R www-data:www-data $DEPLOY_DIR"
+        ssh -o StrictHostKeyChecking=no root@$SERVER_IP "chmod -R 755 $DEPLOY_DIR"
