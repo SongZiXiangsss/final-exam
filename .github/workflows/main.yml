@@ -2,7 +2,7 @@ name: React Build and Deploy
 
 on:
   push:
-    branches: [ "main" ]  # 只在main分支推送时触发
+    branches: [ "master" ]  # 只在main分支推送时触发
 
 env:
   SERVER_IP: 121.43.236.194
