@@ -12,7 +12,7 @@ function BrowserRouter(props) {
 
 root.render(
   <React.StrictMode>
-      <BrowserRouter basename="/final-exam"> <App /> </BrowserRouter>,
+      <App />,
   </React.StrictMode>
 );
 

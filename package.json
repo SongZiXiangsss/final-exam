@@ -19,7 +19,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages-clean && gh-pages -d build"
   },
-  "homepage": ".",
+  "homepage": "https://eric465364.github.io/final-exam",
   "eslintConfig": {
     "extends": [
       "react-app",
