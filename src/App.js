@@ -10,6 +10,9 @@ function App() {
             <p><strong>Name:</strong> Thomas</p>
           </div>
           <p className="welcome-message">
+            <a href="/todo.html">Go to ToDO APP</a>
+          </p>
+          <p className="welcome-message">
             Welcome to my personal introduction page!
           </p>
         </header>
