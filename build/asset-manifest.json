@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/final-exam/static/css/main.dabb0034.css",
-    "main.js": "/final-exam/static/js/main.ca4c68fd.js",
-    "static/js/453.346dc932.chunk.js": "/final-exam/static/js/453.346dc932.chunk.js",
-    "static/media/logo.svg": "/final-exam/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/final-exam/index.html",
-    "main.dabb0034.css.map": "/final-exam/static/css/main.dabb0034.css.map",
-    "main.ca4c68fd.js.map": "/final-exam/static/js/main.ca4c68fd.js.map",
-    "453.346dc932.chunk.js.map": "/final-exam/static/js/453.346dc932.chunk.js.map"
+    "main.css": "/static/css/main.dabb0034.css",
+    "main.js": "/static/js/main.ffd25837.js",
+    "static/js/453.346dc932.chunk.js": "/static/js/453.346dc932.chunk.js",
+    "index.html": "/index.html",
+    "main.dabb0034.css.map": "/static/css/main.dabb0034.css.map",
+    "main.ffd25837.js.map": "/static/js/main.ffd25837.js.map",
+    "453.346dc932.chunk.js.map": "/static/js/453.346dc932.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dabb0034.css",
-    "static/js/main.ca4c68fd.js"
+    "static/js/main.ffd25837.js"
   ]
 }
